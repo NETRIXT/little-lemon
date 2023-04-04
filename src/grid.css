@@ -17,8 +17,9 @@
 .footer {
     grid-area: footer;
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, 150px);
     grid-auto-rows: minmax(150px, auto);
+    grid-gap: clamp(50px, calc(10vw + 20px), 210px);
 }
 
 .nav {
@@ -40,4 +41,44 @@
     display: inline-grid;
     grid-template-columns: repeat(6, 1fr);
     justify-items: center;
+}
+
+.doormat-nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.doormat-nav li {
+  list-style: none;
+  padding-bottom: 5px;
+}
+
+.doormat-title {
+  max-width: 20px;
+}
+
+.doormat-nav {
+  padding-left: 0px;
+}
+
+.info {
+  padding-top: 20px;
+}
+
+.contact h2 {
+  padding-top: 10px;
+}
+
+.info p {
+  margin: 0px;
+  padding-bottom: 5px;
+}
+
+.fb {
+  max-width: 30%;
+}
+
+.insta {
+  max-width: 26.7%;
 }
