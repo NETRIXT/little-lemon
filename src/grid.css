@@ -82,3 +82,13 @@
 .insta {
   max-width: 26.7%;
 }
+
+.main {
+  display: grid;
+  grid-area: main;
+}
+
+.intro-section {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+}
