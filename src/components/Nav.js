@@ -1,4 +1,3 @@
-import hamburger from '../img/icon_hamburger.svg'
 import { Component } from 'react';
 
 class Nav extends Component {
