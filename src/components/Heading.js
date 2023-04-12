@@ -2,7 +2,7 @@ import restauranfood from '../img/restauranfood.jpg'
 import CallToAction from './CallToAction';
 
 
-function Homepage (props) {
+function Heading (props) {
     return (
         <section className="intro">
          <div className='container'>
@@ -28,4 +28,4 @@ function Homepage (props) {
     )
 }
 
-export default Homepage;
+export default Heading;
