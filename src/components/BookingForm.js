@@ -3,12 +3,14 @@ import { useState } from "react";
 function BookingForm() {
     const [date, setDate] = useState("");
     const [number, setNumber] = useState("");
+    const [time, setTime] = useState("");
     const [occasion, setOccasion] = useState("1");
     const handleSubmit = (e) => {
         e.preventDefault();
         setDate("");
         setNumber("");
         setOccasion("1");
+        setTime("");
         console.log("Form submitted!");
     };
 
@@ -20,7 +22,7 @@ function BookingForm() {
    <input type="date" id="res-date" value={date} 
    onChange={e => setDate(e.target.value) }/>
    <label htmlFor="res-time">Choose time</label>
-   <select id="res-time ">
+   <select id="res-time" value={time} onChange={e => setTime(e.target.value)}>
       <option>17:00</option>
       <option>18:00</option>
       <option>19:00</option>
