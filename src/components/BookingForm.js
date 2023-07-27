@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function BookingForm(props) {
     const [date, setDate] = useState("");
@@ -18,21 +18,43 @@ function BookingForm(props) {
         console.log("Form submitted!");
     };
 
+    const [isFormValid, setFormValid] = useState(false);
+
+
     function handleDateChange(e) {
         const selectedDate = e.target.value;
         setDate(selectedDate);
         updateTimes(selectedDate);
+        
+        if (!selectedDate) {
+          updateTimes("");
+        } else {
+          updateTimes(selectedDate);
+        }
+        
       }
+
+      function validateForm() {
+        const isDateValid = !!date;
+        const isTimeValid = !!time;
+        const isNumberValid = !!number;
+        const isOccasionValid = !!occasion;
+        setFormValid(isDateValid && isTimeValid && isNumberValid && isOccasionValid);
+      }
+    
+      useEffect(() => {
+        validateForm();
+      }, [date, time, number, occasion]);
 
 
     return (
         <div className="container">
     <form onSubmit={handleSubmit} style={{ display: "grid", maxWidth: "200px", gap: "20px" }}>
         <label htmlFor="res-date">Choose date</label>
-        <input type="date" id="res-date" value={date} onChange={handleDateChange} />
+        <input type="date" id="res-date" value={date} onChange={handleDateChange} required/>
 
         <label htmlFor="res-time">Choose time</label>
-        <select id="res-time" value={time} onChange={(e) => setTime(e.target.value)}>
+        <select id="res-time" value={time} onChange={(e) => setTime(e.target.value)} required>
           <option value="">Select a time</option>
           {availableTimes.map((time, index) => (
             <option key={index} value={time.time} disabled={time.booked}>
@@ -45,13 +67,13 @@ function BookingForm(props) {
    <input 
    type="number" placeholder="1" min="1" max="10" id="guests" 
    value={number} 
-   onChange={e => setNumber(e.target.value) }/>
+   onChange={e => setNumber(e.target.value)} required/>
    <label htmlFor="occasion">Occasion</label>
-   <select id="occasion" value={occasion} onChange={e => setOccasion(e.target.value)}>
+   <select id="occasion" value={occasion} onChange={e => setOccasion(e.target.value)} required>
       <option>Birthday</option>
       <option>Anniversary</option>
    </select>
-   <input type="submit" value="Make Your reservation"/>
+   <input type="submit" value="Make Your reservation" disabled={!isFormValid}/>
    </form>
 </div>
     );

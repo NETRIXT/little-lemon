@@ -1,6 +1,6 @@
 function CallToAction(props) {
     return (
-        <button className='yellow-cta'><a href={props.buttonUrl} role="button">{props.heading}</a></button>
+        <button aria-label="On Click" className='yellow-cta'><a href={props.buttonUrl} role="button">{props.heading}</a></button>
     );
   }
   

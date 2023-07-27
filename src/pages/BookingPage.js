@@ -1,4 +1,4 @@
-import { useState, useReducer } from "react";
+import { useReducer } from "react";
 import BookingForm from "../components/BookingForm";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
