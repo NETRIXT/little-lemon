@@ -1,5 +1,4 @@
 import { render, screen, waitFor, fireEvent } from '@testing-library/react';
-import App from './App';
 import BookingForm from './components/BookingForm';
 
 const mockUpdateTimes = jest.fn();
@@ -20,6 +19,7 @@ test("Renders the updateTimes and initializeTimes functions", async () => {
 });
 
 
+
 test('Renders the Choose date heading', () => {
   render(<BookingForm availableTimes={mockAvailableTimes} updateTimes={mockUpdateTimes} />);
   const headingElement = screen.getByText("Choose date");
@@ -29,6 +29,16 @@ test('Renders the Choose date heading', () => {
 function updateTimes(state, times) {
   return times;
 }
+
+test("Invalid name shows error message", () => {
+  render(<BookingForm availableTimes={mockAvailableTimes} updateTimes={mockUpdateTimes} />);
+  const nameInput = screen.getByLabelText(/Your Name/i);
+
+  fireEvent.change(nameInput, { target: { value: "Vlad@" } });
+
+  const errorMessage = screen.getByText(/Please enter a valid name with letters and spaces only/i);
+  expect(errorMessage).toBeInTheDocument();
+});
 
 test('updateTimes should return the same value as provided in the state', () => {
   const state = [
@@ -99,7 +109,9 @@ describe("BookingForm JS validation functions", () => {
     const timeSelect = screen.getByLabelText(/Choose time/i);
     const guestsInput = screen.getByLabelText(/Number of guests/i);
     const occasionSelect = screen.getByLabelText(/Occasion/i);
+    const nameInput = screen.getByLabelText(/Your Name/i);
 
+    fireEvent.change(nameInput, { target: { value: "Vlad" } });
     fireEvent.change(dateInput, { target: { value: "2023-07-27" } });
     fireEvent.change(timeSelect, { target: { value: "12:00 PM" } });
     fireEvent.change(guestsInput, { target: { value: "4" } });
