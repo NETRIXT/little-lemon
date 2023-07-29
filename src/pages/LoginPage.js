@@ -7,6 +7,7 @@ function LoginPage() {
         <Header/>
         <div className="container">
             <h1>Login</h1>
+            <h2>Login page is under construction</h2>
         </div>
         <Footer/>
         </>
