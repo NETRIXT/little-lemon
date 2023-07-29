@@ -7,7 +7,7 @@ function OrderOnline() {
         <Header/>
         <div className="container">
         <h1>Order Online</h1>
-        <h2>To place an order, please contact: <tel>+372521451</tel></h2>
+        <h2>To place an order, please contact: <a href="tel:+372521451">+372521451</a></h2>
         </div>
         <Footer/>
         </>
