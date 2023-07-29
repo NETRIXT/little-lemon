@@ -36,6 +36,7 @@ function BookingForm(props) {
   
     }
 
+    useEffect(() => {
       function validateForm() {
         const isDateValid = !!date;
         const isTimeValid = !!time;
@@ -45,9 +46,8 @@ function BookingForm(props) {
         setFormValid(isDateValid && isTimeValid && isNumberValid && isOccasionValid && isNameValid);
       }
     
-      useEffect(() => {
-        validateForm();
-      }, [date, time, number, occasion, name]);
+      validateForm();
+    }, [date, time, number, occasion, name]);
 
 
     return (
