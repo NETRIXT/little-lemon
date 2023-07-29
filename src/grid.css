@@ -332,11 +332,11 @@ button:hover {
   align-items: center;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 768px) {
 
   .container {
-    max-width: 350px;
-    margin: 0 auto;
+    margin-left: 8.3%;
+    margin-right: 8.3%;
    }
 
   #nav ul {
@@ -345,7 +345,8 @@ button:hover {
     align-items: flex-start;
     justify-content: flex-start;
     position: fixed;
-    top: 90px;
+    z-index: 9999;
+    top: -40px;
     right: -320px;
     width: 300px;
     height: 100vh;
@@ -365,6 +366,10 @@ button:hover {
 
 #mobile {
   display: block;
+  position: fixed;
+  top: 30px;
+  right: 20px;
+  z-index: 9999;
 }
 
 #mobile i { 
@@ -388,9 +393,25 @@ button:hover {
 }
 
 .yellow-cta {
-    max-width: 120px !important;
+    max-width: 100px !important;
     margin-bottom: 20px;
  
   }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    margin-left: 8.3%;
+    margin-right: 8.3%;
+   }
+
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    margin-left: 8.3%;
+    margin-right: 8.3%;
+   }
 
 }
