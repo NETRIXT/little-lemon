@@ -10,8 +10,8 @@ function Homepage() {
       <>
       <Header/>
       <main>
-      <Heading heading="Reserve a Table"/>
-      <Specials heading="Online Menu"/>
+      <Heading heading="Reserve a Table" buttonUrl="reservations" />
+      <Specials heading="Online Menu" buttonUrl="menu"/>
       <CustomerSay/>
       <Chicago/>
       </main>

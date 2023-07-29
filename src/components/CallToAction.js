@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom";
+
 function CallToAction(props) {
-    return (
-        <button aria-label="On Click" className='yellow-cta'><a href={props.buttonUrl} role="button">{props.heading}</a></button>
-    );
-  }
-  
-  export default CallToAction;
-  
+  return (
+    <Link to={props.buttonUrl} role="button" className='yellow-cta' aria-label="On Click">
+      {props.heading}
+    </Link>
+  );
+}
+
+export default CallToAction;

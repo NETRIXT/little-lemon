@@ -16,7 +16,7 @@ function Heading (props) {
             Ullamco officia incididunt quis elit. Cupidatat mollit duis mollit Lorem aliquip in.
             Non elit qui eu exercitation aliqua duis non elit proident duis.</p>
 
-        <CallToAction heading={props.heading}/>
+        <CallToAction heading={props.heading} buttonUrl={props.buttonUrl}/>
         </div>
 
         <div className='right-section'>

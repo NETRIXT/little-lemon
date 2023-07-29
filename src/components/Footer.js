@@ -7,8 +7,9 @@ function Footer() {
             <div className="container">
                 <div className="footer">
                     <div className='logo-footer'>
+                        <Link to='/'>
             <img src={logofooter} alt='Logo footer'></img>
-                    </div>
+            </Link></div>
         <nav>
         <h2 className="doormat-title">Navigation</h2>
         <ul className="doormat-nav">

@@ -17,6 +17,7 @@ function Main () {
     <Route path="/order-online" element={<OrderOnline/>}></Route>
     <Route path="/about" element={<AboutPage/>}></Route>
     <Route path="/menu" element={<MenuPage/>}></Route>
+    <Route path="/homepage" element={<Homepage/>}></Route>
     <Route path="/reservations" element={<BookingPage/>}></Route>
     <Route path="/login" element={<LoginPage/>}></Route>
     </Routes>
